@@ -1,6 +1,7 @@
 import os, sys, importlib.util
 from functions.file_access_confirmation import confirm_file_read
 
+
 constants_path = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     '..', 'constants.py'
@@ -23,11 +24,3 @@ def get_file_content(working_directory, file_path):
         return file_content_string
     except Exception as e:
         return(f'    Error: {e}')
-
-
-def main():
-    output = get_file_content("calculator", "lorem.txt")
-    print(f'output: {output}')
-
-if __name__ == "__main__":
-    main()

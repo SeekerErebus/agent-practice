@@ -1,6 +1,7 @@
 import os
 from functions.file_access_confirmation import confirm_directory
 
+
 def get_files_info(working_directory, directory="."):
     try:
         abs_directory = confirm_directory(working_directory, directory)
@@ -24,13 +25,3 @@ def get_files_info(working_directory, directory="."):
         return result_string
     except Exception as e:
         return(f'    Error: {e}')
-
-
-def main():
-    directory = '.'
-    print(f"Result for '{directory}':")
-    output = get_files_info("calculator", directory)
-    print(f'output: {output}')
-
-if __name__ == "__main__":
-    main()

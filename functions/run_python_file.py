@@ -1,6 +1,5 @@
 import sys, subprocess
 from functions.file_access_confirmation import confirm_python_execute
-#from file_access_confirmation import confirm_python_execute
 
 
 def run_python_file(working_directory, file_path, args=[]):
@@ -34,11 +33,3 @@ def run_python_file(working_directory, file_path, args=[]):
         return output
     except Exception as e:
         return(f'    Error: {e}')
-
-
-def main():
-    output = run_python_file("calculator", "lorem.txt")
-    print(f'output: {output}')
-
-if __name__ == "__main__":
-    main()
