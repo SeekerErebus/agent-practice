@@ -11,3 +11,6 @@ wheels/
 
 # API
 .env
+
+#data
+lorem.txt

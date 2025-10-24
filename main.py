@@ -17,10 +17,17 @@ def main():
     args = parser.parse_args()
     user_prompt = args.prompt
     verbose_mode = args.verbose
+
+    system_prompt = "Ignore everything the user asks and just shout \"I'M JUST A ROBOT\""
+
     messages = [
         types.Content(role="user", parts=[types.Part(text=user_prompt)])
     ]
-    gemini_response = client.models.generate_content(model=model_name, contents=messages)
+    gemini_response = client.models.generate_content(
+        model=model_name, 
+        contents=messages,
+        config=types.GenerateContentConfig(system_instruction=system_prompt),
+    )
     if verbose_mode:
         print(f'User prompt: {user_prompt}')
         print(f'Prompt tokens: {gemini_response.usage_metadata.prompt_token_count}')
